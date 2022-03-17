@@ -7,7 +7,11 @@ const AllStaff = ({ staffData }) => {
 
   return (
     <div>
-      <h1>All Staff</h1>
+      {staffData.map((staff, i) => (
+        <div key={staff.id}>
+          <h3>{staff.name}</h3>
+        </div>
+      ))}
     </div>
   )
 }
