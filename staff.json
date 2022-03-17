@@ -1,0 +1,59 @@
+{
+  "Staff": [
+    {
+      "id": 1,
+      "name": "Daniel",
+      "preference": "Stiverson"
+    },
+    {
+      "id": 2,
+      "name": "Christina",
+      "preference": "Roland"
+    },
+    {
+      "id": 3,
+      "name": "Mindy",
+      "preference": null
+    },
+    {
+      "id": 4,
+      "name": "Mike",
+      "preference": null
+    },
+    {
+      "id": 5,
+      "name": "Shannon",
+      "preference": "Hsu"
+    },
+    {
+      "id": 6,
+      "name": "Karla",
+      "preference": "Vu"
+    },
+    {
+      "id": 7,
+      "name": "Christine",
+      "preference": "Roos"
+    },
+    {
+      "id": 8,
+      "name": "Penny",
+      "preference": "Neems"
+    },
+    {
+      "id": 9,
+      "name": "Cindy",
+      "preference": "Flattem"
+    },
+    {
+      "id": 10,
+      "name": "Kristine",
+      "preference": null
+    },
+    {
+      "id": 11,
+      "name": "Maya",
+      "preference": "Thayi"
+    }
+  ]
+}
