@@ -1,24 +1,14 @@
 {
   "Staff": [
     {
-      "id": 1,
       "name": "Daniel",
-      "preference": "Stiverson"
+      "preference": "Stiverson",
+      "id": 1
     },
     {
       "id": 2,
       "name": "Christina",
       "preference": "Roland"
-    },
-    {
-      "id": 3,
-      "name": "Mindy",
-      "preference": null
-    },
-    {
-      "id": 4,
-      "name": "Mike",
-      "preference": null
     },
     {
       "id": 5,

@@ -8,6 +8,15 @@ const API = {
   },
   createStaff: (newStaff) => {
     return axios.post(baseURL, newStaff);
+  },
+  getStaffById: (id) => {
+    return axios.get(`${baseURL}/${id}`);
+  },
+  updateStaff: (id, updatedStaff) => {
+    return axios.put(`${baseURL}/${id}`, updatedStaff);
+  },
+  deleteJournal: (id) => {
+    return axios.delete(`${baseURL}/${id}`)
   }
 
 }
