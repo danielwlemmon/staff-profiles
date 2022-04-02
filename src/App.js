@@ -5,95 +5,78 @@ import AllStaff from './Components/AllStaff'
 import API from './Services/API';
 import OneStaff from './Components/OneStaff';
 import UpdateStaff from './Components/UpdateStaff';
+import StaffContext from './Services/StaffContext';
 
 function App() {
-
   const [allStaff, setAllStaff] = useState([]);
   const [newStaff, setNewStaff] = useState({
     name: "",
     preference: "",
   });
-
   const [refresh, setRefresh] = useState({ count: 0 });
+  const navigate = useNavigate();
+
+  const contextObject = {
+    handleSubmit: (e) => {
+      e.preventDefault();
+      API.createStaff(newStaff).then(res => {
+        setRefresh({ ...refresh, count: refresh.count + 1 });
+      });
+    },
+    handleNameChange: (e) => {
+      const { value } = e.target;
+      setNewStaff({ ...newStaff, name: value });
+    },
+    handlePreferenceChange: (e) => {
+      const { value } = e.target;
+      setNewStaff({ ...newStaff, preference: value });
+    },
+    updateStaff: (id) => {
+      API.updateStaff(id, newStaff).then(res => {
+        setRefresh({ ...refresh, count: refresh.count + 1 });
+        navigate("/");
+
+      });
+    },
+    handleDelete: (id) => {
+      API.deleteJournal(id).then(res => {
+        setRefresh({ ...refresh, count: refresh.count + 1 });
+        navigate("/");
+      });
+    }
+  };
 
   useEffect(() => {
     getAllStaff();
   }, []);
 
-
-  const navigate = useNavigate();
+  useEffect(() => {
+    getAllStaff();
+  }, [refresh]);
 
   const getAllStaff = () => {
     API.getAll().then(res => {
 
       setAllStaff(res.data)
     })
-  }
-
-  const handleNameChange = (e) => {
-
-    // deconstructing e.target.value
-    const { value } = e.target;
-    setNewStaff({ ...newStaff, name: value });
-  }
-
-  const handlePreferenceChange = (e) => {
-    const { value } = e.target;
-    setNewStaff({ ...newStaff, preference: value });
-  }
-
-  // submits updated newStaff state of staff
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    API.createStaff(newStaff).then(res => {
-      console.log(res)
-    })
-  }
-
-  useEffect(() => {
-    getAllStaff();
-  }, [refresh]);
-
-  const updateStaff = (id) => {
-
-    API.updateStaff(id, newStaff).then(res => {
-      console.log(res);
-      setRefresh({...refresh, count: refresh.count + 1});
-      navigate("/");
-
-    })
-  }
-
-  const handleDelete = (id) => {
-    API.deleteJournal(id).then(res => {
-      console.log(res);
-      setRefresh({...refresh, count: refresh.count + 1});
-      navigate("/");
-
-    })
-  }
+  };
 
   return (
-    <div className="App">
-      <Routes>
+    <div className="App" >
+      <StaffContext.Provider value={contextObject}>
+        <Routes>
+          <Route path="/"
+            exact
+            element={<AllStaff staffData={allStaff} />}
+          />
 
-        <Route path="/" exact element={<AllStaff
-          staffData={allStaff}
-          handleNameChange={handleNameChange}
-          handlePreferenceChange={handlePreferenceChange}
-          handleSubmit={handleSubmit}
-          handleDelete={handleDelete}
-        />} />
+          <Route path="/one-staff/:id" element={<OneStaff />} />
+          <Route path="/update-staff/:id" element={<UpdateStaff />}
+          />
 
-        <Route path="/one-staff/:id" element={<OneStaff handleDelete={handleDelete}/>} />
-        <Route path="/update-staff/:id" element={<UpdateStaff
-          handleNameChange={handleNameChange}
-          handlePreferenceChange={handlePreferenceChange}
-          updateStaff={updateStaff}
-        />} />
-
-      </Routes>
-    </div>
+        </Routes>
+      </StaffContext.Provider>
+    </div >
   );
 }
 

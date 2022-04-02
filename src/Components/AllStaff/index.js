@@ -1,11 +1,15 @@
 import React from 'react';
 import CreateStaff from '../CreateStaff';
+import StaffContext from '../../Services/StaffContext';
+import { useContext } from 'react';
 
-const AllStaff = ({ staffData, handleSubmit, handleNameChange, handlePreferenceChange, handleDelete }) => {
+const AllStaff = ({ staffData }) => {
+
+  const context = useContext(StaffContext);
 
   return (
     <div>
-      <CreateStaff handleSubmit={handleSubmit} handleNameChange={handleNameChange} handlePreferenceChange={handlePreferenceChange} />
+      <CreateStaff />
       {staffData.map((staff, i) => (
         <div key={staff.id}>
           <h3>{staff.name}</h3>
@@ -14,10 +18,10 @@ const AllStaff = ({ staffData, handleSubmit, handleNameChange, handlePreferenceC
             {" "}
             View Staff{" "}</a>
 
-            <a href={`update-staff/${staff.id}`}>
+          <a href={`update-staff/${staff.id}`}>
             {" "}
             Update Staff{" "}</a>
-            <button onClick={() => handleDelete(staff.id)}>Delete</button>
+          <button onClick={() => context.handleDelete(staff.id)}>Delete</button>
         </div>
       ))}
     </div>
