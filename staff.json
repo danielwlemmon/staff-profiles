@@ -1,54 +1,80 @@
 {
   "Staff": [
     {
-      "name": "Daniel",
-      "preference": "Stiverson",
-      "id": 1
-    },
-    {
       "id": 2,
       "name": "Christina",
-      "preference": "Roland"
+      "preference": "Roland",
+      "provider": false,
+      "restrict": null
     },
     {
       "id": 5,
       "name": "Shannon",
-      "preference": "Hsu"
+      "preference": "Hsu",
+      "provider": false,
+      "restrict": null
     },
     {
       "id": 6,
       "name": "Karla",
-      "preference": "Vu"
+      "preference": "Vu",
+      "provider": false,
+      "restrict": null
     },
     {
       "id": 7,
       "name": "Christine",
-      "preference": "Roos"
+      "preference": "Roos",
+      "provider": false,
+      "restrict": null
     },
     {
       "id": 8,
       "name": "Penny",
-      "preference": "Neems"
+      "preference": "Neems",
+      "provider": false,
+      "restrict": null
     },
     {
       "id": 9,
       "name": "Cindy",
-      "preference": "Flattem"
+      "preference": "Flattem",
+      "provider": false,
+      "restrict": null
     },
     {
       "id": 10,
       "name": "Kristine",
-      "preference": null
+      "preference": null,
+      "provider": false,
+      "restrict": null
     },
     {
       "name": "Mike",
       "preference": "Stiverson",
-      "id": 12
+      "id": 12,
+      "provider": false,
+      "restrict": null
     },
     {
       "name": "Jennifer",
       "preference": "Thayi",
-      "id": 13
+      "id": 13,
+      "provider": false,
+      "restrict": null
+    },
+    {
+      "name": "Daniel",
+      "preference": "Stiverson",
+      "restrict": "",
+      "id": 1
+    },
+    {
+      "name": "Billy",
+      "preference": "Madison",
+      "restrict": "Vu",
+      "provider": false,
+      "id": 14
     }
   ]
 }

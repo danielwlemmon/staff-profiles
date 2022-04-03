@@ -17,6 +17,16 @@ const CreateStaff = () => {
         <br />
         <input name="preference" onChange={context.handlePreferenceChange}></input>
         <br />
+        <label htmlFor="restrict">Avoid Assigment</label>
+        <br />
+        <input name="restrict" onChange={context.handleRestrictChange}></input>
+        <br />
+        <label for="provider">Provider?</label>
+        <br />
+        <select name="provider">
+          <option value="true">Yes</option>
+          <option value="false" selected >No</option>
+        </select>
         <button className="btn" type="submit">
           Add Staff
         </button>

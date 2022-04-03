@@ -12,6 +12,8 @@ function App() {
   const [newStaff, setNewStaff] = useState({
     name: "",
     preference: "",
+    restrict: null,
+    provider: false,
   });
   const [refresh, setRefresh] = useState({ count: 0 });
   const navigate = useNavigate();
@@ -43,6 +45,10 @@ function App() {
         setRefresh({ ...refresh, count: refresh.count + 1 });
         navigate("/");
       });
+    },
+    handleRestrictChange: (e) => {
+      const { value } = e.target;
+      setNewStaff({...newStaff, restrict: value });
     }
   };
 

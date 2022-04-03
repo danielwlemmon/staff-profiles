@@ -9,11 +9,11 @@ const AllStaff = ({ staffData }) => {
 
   return (
     <div>
-      <CreateStaff />
+      
       {staffData.map((staff, i) => (
-        <div key={staff.id}>
-          <h3>{staff.name}</h3>
-
+        <div class="staff_list" key={staff.id}>
+          <h3>Name: {staff.name}</h3>
+          <h5>Assigned to: {staff.preference}</h5>
           <a href={`one-staff/${staff.id}`}>
             {" "}
             View Staff{" "}</a>
@@ -24,6 +24,7 @@ const AllStaff = ({ staffData }) => {
           <button onClick={() => context.handleDelete(staff.id)}>Delete</button>
         </div>
       ))}
+      <CreateStaff />
     </div>
   )
 }

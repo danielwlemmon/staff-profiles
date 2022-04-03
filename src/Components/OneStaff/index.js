@@ -22,11 +22,13 @@ const OneStaff = () => {
     getStaff();
   }, [])
 
-
+  console.log(staff);
   return (
   <div>
     <h3>{staff.name}</h3>
     <p>{staff.preference}</p>
+    <p>{staff.restrict}</p>
+    <p>{staff.provider}</p>
     <button onClick={() => context.handleDelete(staff.id)}>Delete</button>
     <a href={`/update-staff/${staff.id}`}>Update</a>
   </div>
