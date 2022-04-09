@@ -1,11 +1,7 @@
 import React from 'react';
 import CreateStaff from '../CreateStaff';
-import StaffContext from '../../Services/StaffContext';
-import { useContext } from 'react';
 
-const AllStaff = ({ staffData }) => {
-
-  const context = useContext(StaffContext);
+const AllStaff = ({ staffData, handleSubmit, handleNameChange, handlePreferenceChange, handleDelete }) => {
 
   return (
     <div>
@@ -18,10 +14,10 @@ const AllStaff = ({ staffData }) => {
             {" "}
             View Staff{" "}</a>
 
-          <a href={`update-staff/${staff.id}`}>
+            <a href={`update-staff/${staff.id}`}>
             {" "}
             Update Staff{" "}</a>
-          <button onClick={() => context.handleDelete(staff.id)}>Delete</button>
+            <button onClick={() => handleDelete(staff.id)}>Delete</button>
         </div>
       ))}
       <CreateStaff />

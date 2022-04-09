@@ -1,21 +1,17 @@
-import React, { useCallback, useContext } from 'react';
-import StaffContext from '../../Services/StaffContext';
-
-const CreateStaff = () => {
+import React from 'react';
 
 
-  const context = useContext(StaffContext);
-
+const CreateStaff = ({ handleSubmit, handleNameChange, handlePreferenceChange }) => {
   return (
     <div>
-      <form onSubmit={context.handleSubmit} className="forms">
+      <form onSubmit={handleSubmit} className="forms">
         <label htmlFor="name">Staff Name</label>
         <br />
-        <input name="name" onChange={context.handleNameChange}></input>
+        <input name="name" onChange={handleNameChange}></input>
         <br />
         <label htmlFor="preference">Assignment Preference</label>
         <br />
-        <input name="preference" onChange={context.handlePreferenceChange}></input>
+        <input name="preference" onChange={handlePreferenceChange}></input>
         <br />
         <label htmlFor="restrict">Avoid Assigment</label>
         <br />

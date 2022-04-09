@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import API from '../../Services/API';
 import { useParams } from 'react-router-dom';
-import StaffContext from '../../Services/StaffContext';
-import { useContext } from 'react';
 
-const OneStaff = () => {
+const OneStaff = ({handleDelete}) => {
 
-  const context = useContext(StaffContext);
+
   const [ staff, setStaff ] = useState({});
 
   // getting id params using use params

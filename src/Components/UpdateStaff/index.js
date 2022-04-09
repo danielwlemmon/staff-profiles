@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import API from '../../Services/API';
 import { useParams } from 'react-router-dom';
-import StaffContext from '../../Services/StaffContext';
-import { useContext } from 'react';
 
-const UpdateStaff = () => {
+const UpdateStaff = ( {handleNameChange, handlePreferenceChange, updateStaff}) => {
 
   let { id } = useParams();
   const context = useContext(StaffContext);
@@ -29,7 +27,7 @@ const UpdateStaff = () => {
         <p>{staff.restrict}</p>
         <label htmlFor="name">Enter Name Change</label>
         <br />
-        <input name="name" onChange={context.handleNameChange}></input>
+        <input name="name" onChange={handleNameChange}></input>
         <br />
         <label htmlFor="preference">Change Assignment Preference</label>
         <br />
@@ -49,7 +47,7 @@ const UpdateStaff = () => {
         className="btn" 
         type="button" 
         value="Submit" 
-        onClick={() => context.updateStaff(id)}
+        onClick={() => updateStaff(id)}
         >
           Update Staff
         </button>

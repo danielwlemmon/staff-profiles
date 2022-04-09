@@ -5,9 +5,9 @@ import AllStaff from './Components/AllStaff'
 import API from './Services/API';
 import OneStaff from './Components/OneStaff';
 import UpdateStaff from './Components/UpdateStaff';
-import StaffContext from './Services/StaffContext';
 
 function App() {
+
   const [allStaff, setAllStaff] = useState([]);
   const [newStaff, setNewStaff] = useState({
     name: "",
@@ -15,8 +15,6 @@ function App() {
     restrict: null,
     provider: false,
   });
-  const [refresh, setRefresh] = useState({ count: 0 });
-  const navigate = useNavigate();
 
   const contextObject = {
     handleSubmit: (e) => {
@@ -56,33 +54,80 @@ function App() {
     getAllStaff();
   }, []);
 
-  useEffect(() => {
-    getAllStaff();
-  }, [refresh]);
+
+  const navigate = useNavigate();
 
   const getAllStaff = () => {
     API.getAll().then(res => {
 
       setAllStaff(res.data)
     })
-  };
+  }
+
+  const handleNameChange = (e) => {
+
+    // deconstructing e.target.value
+    const { value } = e.target;
+    setNewStaff({ ...newStaff, name: value });
+  }
+
+  const handlePreferenceChange = (e) => {
+    const { value } = e.target;
+    setNewStaff({ ...newStaff, preference: value });
+  }
+
+  // submits updated newStaff state of staff
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    API.createStaff(newStaff).then(res => {
+      console.log(res)
+    })
+  }
+
+  useEffect(() => {
+    getAllStaff();
+  }, [refresh]);
+
+  const updateStaff = (id) => {
+
+    API.updateStaff(id, newStaff).then(res => {
+      console.log(res);
+      setRefresh({...refresh, count: refresh.count + 1});
+      navigate("/");
+
+    })
+  }
+
+  const handleDelete = (id) => {
+    API.deleteJournal(id).then(res => {
+      console.log(res);
+      setRefresh({...refresh, count: refresh.count + 1});
+      navigate("/");
+
+    })
+  }
 
   return (
-    <div className="App" >
-      <StaffContext.Provider value={contextObject}>
-        <Routes>
-          <Route path="/"
-            exact
-            element={<AllStaff staffData={allStaff} />}
-          />
+    <div className="App">
+      <Routes>
 
-          <Route path="/one-staff/:id" element={<OneStaff />} />
-          <Route path="/update-staff/:id" element={<UpdateStaff />}
-          />
+        <Route path="/" exact element={<AllStaff
+          staffData={allStaff}
+          handleNameChange={handleNameChange}
+          handlePreferenceChange={handlePreferenceChange}
+          handleSubmit={handleSubmit}
+          handleDelete={handleDelete}
+        />} />
 
-        </Routes>
-      </StaffContext.Provider>
-    </div >
+        <Route path="/one-staff/:id" element={<OneStaff handleDelete={handleDelete}/>} />
+        <Route path="/update-staff/:id" element={<UpdateStaff
+          handleNameChange={handleNameChange}
+          handlePreferenceChange={handlePreferenceChange}
+          updateStaff={updateStaff}
+        />} />
+
+      </Routes>
+    </div>
   );
 }
 
