@@ -26,6 +26,7 @@ const OneStaff = () => {
   return (
   <div>
     <h3>{staff.firstName}</h3>
+    <h3>{staff.lastName}</h3>
     <p>{staff.assignment}</p>
     <button onClick={() => context.handleDelete(staff.id)}>Delete</button>
     <a href={`/update-staff/${staff.id}`}>Update</a>

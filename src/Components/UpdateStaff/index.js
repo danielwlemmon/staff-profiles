@@ -17,10 +17,16 @@ const UpdateStaff = () => {
         <br />
         <input name="firstName" onChange={context.handleFirstNameChange}></input>
         <br />
+        <label htmlFor="lastName">Last Name</label>
+        <br />
+        <input name="lastName" onChange={context.handleLastNameChange}></input>
+        <br />
+
         <label htmlFor="assignment">Assignment</label>
         <br />
         <input name="assignment" onChange={context.handleAssignmentChange}></input>
         <br />
+        
         <button 
         className="btn" 
         type="button" 
