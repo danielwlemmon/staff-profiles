@@ -5,8 +5,8 @@
       "lastName": "Lemmon",
       "assignment": "Stiverson",
       "duties": "Open, staff Schedule",
-      "shiftStart": "7:15am",
-      "shiftEnd": "5:00pm",
+      "shiftStart": "0715",
+      "shiftEnd": "1700",
       "seniorityDate": "2011-02-28",
       "id": 1
     },
@@ -15,8 +15,8 @@
       "lastName": "Jetson",
       "assignment": "None",
       "duties": "Closing, Instruments",
-      "shiftStart": "9:00 AM",
-      "shiftEnd": "5:00 PM",
+      "shiftStart": "0900",
+      "shiftEnd": "1700",
       "seniorityDate": "2017-05-03",
       "id": 2
     },
@@ -25,8 +25,8 @@
       "lastName": "The",
       "assignment": "Roos",
       "duties": "Mail, Send Letter",
-      "shiftStart": "7:45 AM",
-      "shiftEnd": "5:30PM",
+      "shiftStart": "0745",
+      "shiftEnd": "1730",
       "seniorityDate": "2022-03-04",
       "id": 3
     }

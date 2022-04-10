@@ -6,8 +6,11 @@ import { useContext } from 'react';
 
 const UpdateStaff = () => {
 
-  const { id } = useParams();
   const context = useContext(StaffContext);
+  const [ staff, setStaff ] = useState({});
+
+  // getting id params using use params
+  const { id } = useParams();
 
   return (
     <div>
@@ -15,34 +18,32 @@ const UpdateStaff = () => {
         <h3>Update Staff</h3>
         <label htmlFor="firstName">First Name</label>
         <br />
-        <input name="firstName" onChange={context.handleFirstNameChange}></input>
+        <input onChange={context.handleFirstNameChange}></input>
         <br />
         <label htmlFor="lastName">Last Name</label>
         <br />
-        <input name="lastName" onChange={context.handleLastNameChange}></input>
+        <input  name="lastName" onChange={context.handleLastNameChange}></input>
         <br />
         <label htmlFor="assignment">Assignment</label>
         <br />
-        <input name="assignment" onChange={context.handleAssignmentChange}></input>
+        <input  name="assignment" onChange={context.handleAssignmentChange}></input>
         <br />
         <label htmlFor="duties">Duties</label>
         <br />
-        <input name="duties" onChange={context.handleDutiesChange}></input>
+        <input  name="duties" onChange={context.handleDutiesChange}></input>
         <br />
         <label htmlFor="shiftStart">Shift Begins</label>
         <br />
-        <input name="shiftStart" onChange={context.handleShiftStartChange}></input>
+        <input  placeholder='09:00' name="shiftStart" onChange={context.handleShiftStartChange}></input>
         <br />
-
         <label htmlFor="shiftEnd">Shift Ends</label>
         <br />
-        <input name="seniorityDate" onChange={context.handleSeniorityDateChange}></input>
+        <input placeholder='17:00' name="shiftEnd" onChange={context.handleSeniorityDateChange}></input>
         <br />
         <label htmlFor="seniorityDate">Seniority Date</label>
         <br />
         <input name="seniorityDate" placeholder='YYYY-MM-DD' onChange={context.handleSeniorityDateChange}></input>
         <br />
-
         <button 
         className="btn" 
         type="button" 
