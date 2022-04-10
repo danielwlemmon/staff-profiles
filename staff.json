@@ -1,54 +1,24 @@
 {
   "Staff": [
     {
-      "name": "Daniel",
-      "preference": "Stiverson",
+      "firstName": "Daniel",
+      "lastName": "Lemmon",
+      "assignment": "Stiverson",
+      "duties": "Open, staff Schedule",
+      "shiftStart": "7:15am",
+      "shiftEnd": "5:00pm",
+      "seniorityDate": "February 28, 2011",
       "id": 1
     },
     {
-      "id": 2,
-      "name": "Christina",
-      "preference": "Roland"
-    },
-    {
-      "id": 5,
-      "name": "Shannon",
-      "preference": "Hsu"
-    },
-    {
-      "id": 6,
-      "name": "Karla",
-      "preference": "Vu"
-    },
-    {
-      "id": 7,
-      "name": "Christine",
-      "preference": "Roos"
-    },
-    {
-      "id": 8,
-      "name": "Penny",
-      "preference": "Neems"
-    },
-    {
-      "id": 9,
-      "name": "Cindy",
-      "preference": "Flattem"
-    },
-    {
-      "id": 10,
-      "name": "Kristine",
-      "preference": null
-    },
-    {
-      "name": "Mike",
-      "preference": "Stiverson",
-      "id": 12
-    },
-    {
-      "name": "Jennifer",
-      "preference": "Thayi",
-      "id": 13
+      "firstName": "Billy",
+      "lastName": "Boberson",
+      "assignment": "",
+      "duties": "",
+      "shiftStart": "",
+      "shiftEnd": "",
+      "seniorityDate": "",
+      "id": 2
     }
   ]
 }

@@ -12,8 +12,8 @@ const AllStaff = ({ staffData }) => {
       <CreateStaff />
       {staffData.map((staff, i) => (
         <div key={staff.id}>
-          <h3>{staff.name}</h3>
-
+          <h3>{staff.firstName}</h3>
+          <h3>{staff.lastName}</h3>
           <a href={`one-staff/${staff.id}`}>
             {" "}
             View Staff{" "}</a>

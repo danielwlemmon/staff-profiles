@@ -9,13 +9,13 @@ const CreateStaff = () => {
   return (
     <div>
       <form onSubmit={context.handleSubmit} className="forms">
-        <label htmlFor="name">Staff Name</label>
+        <label htmlFor="firstName">First Name</label>
         <br />
-        <input name="name" onChange={context.handleNameChange}></input>
+        <input name="firstName" onChange={context.handleFirstNameChange}></input>
         <br />
-        <label htmlFor="preference">Assignment Preference</label>
+        <label htmlFor="lastName">Last Name</label>
         <br />
-        <input name="preference" onChange={context.handlePreferenceChange}></input>
+        <input name="lastName" onChange={context.handleLastNameChange}></input>
         <br />
         <button className="btn" type="submit">
           Add Staff

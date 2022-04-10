@@ -10,8 +10,13 @@ import StaffContext from './Services/StaffContext';
 function App() {
   const [allStaff, setAllStaff] = useState([]);
   const [newStaff, setNewStaff] = useState({
-    name: "",
-    preference: "",
+    firstName: "",
+    lastName: "",
+    assignment: "",
+    duties:"",
+    shiftStart:"",
+    shiftEnd:"",
+    seniorityDate:"",
   });
   const [refresh, setRefresh] = useState({ count: 0 });
   const navigate = useNavigate();
@@ -23,13 +28,17 @@ function App() {
         setRefresh({ ...refresh, count: refresh.count + 1 });
       });
     },
-    handleNameChange: (e) => {
+    handleFirstNameChange: (e) => {
       const { value } = e.target;
-      setNewStaff({ ...newStaff, name: value });
+      setNewStaff({ ...newStaff, firstName: value });
     },
-    handlePreferenceChange: (e) => {
+    handleLastNameChange: (e) => {
       const { value } = e.target;
-      setNewStaff({ ...newStaff, preference: value });
+      setNewStaff({ ...newStaff, lastName: value });
+    },
+    handleAssignmentChange: (e) => {
+      const { value } = e.target;
+      setNewStaff({ ...newStaff, assignment: value });
     },
     updateStaff: (id) => {
       API.updateStaff(id, newStaff).then(res => {

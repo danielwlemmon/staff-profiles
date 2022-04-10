@@ -18,7 +18,6 @@ const API = {
   deleteJournal: (id) => {
     return axios.delete(`${baseURL}/${id}`)
   }
-
 }
 
 export default API;

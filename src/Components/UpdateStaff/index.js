@@ -13,13 +13,13 @@ const UpdateStaff = () => {
     <div>
       <form>
         <h3>Update Staff</h3>
-        <label htmlFor="name">Staff Name</label>
+        <label htmlFor="firstName">First Name</label>
         <br />
-        <input name="name" onChange={context.handleNameChange}></input>
+        <input name="firstName" onChange={context.handleFirstNameChange}></input>
         <br />
-        <label htmlFor="preference">Assignment Preference</label>
+        <label htmlFor="assignment">Assignment</label>
         <br />
-        <input name="preference" onChange={context.handlePreferenceChange}></input>
+        <input name="assignment" onChange={context.handleAssignmentChange}></input>
         <br />
         <button 
         className="btn" 

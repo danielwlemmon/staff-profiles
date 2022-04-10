@@ -10,7 +10,7 @@ export default StaffContext;
 //
 //
 //
-//export const StraffProvider = (props) => {
+//export const StaffProvider = (props) => {
 //
 //  const baseURL = "http://localhost:3000/staff";
 //
