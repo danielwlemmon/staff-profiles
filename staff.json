@@ -7,18 +7,28 @@
       "duties": "Open, staff Schedule",
       "shiftStart": "7:15am",
       "shiftEnd": "5:00pm",
-      "seniorityDate": "February 28, 2011",
+      "seniorityDate": "2011-02-28",
       "id": 1
     },
     {
       "firstName": "George",
-      "lastName": "Williams",
-      "assignment": "",
-      "duties": "",
-      "shiftStart": "",
-      "shiftEnd": "",
-      "seniorityDate": "",
+      "lastName": "Jetson",
+      "assignment": "None",
+      "duties": "Closing, Instruments",
+      "shiftStart": "9:00 AM",
+      "shiftEnd": "5:00 PM",
+      "seniorityDate": "2017-05-03",
       "id": 2
+    },
+    {
+      "firstName": "FNG",
+      "lastName": "The",
+      "assignment": "Roos",
+      "duties": "Mail, Send Letter",
+      "shiftStart": "7:45 AM",
+      "shiftEnd": "5:30PM",
+      "seniorityDate": "2022-03-04",
+      "id": 3
     }
   ]
 }

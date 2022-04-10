@@ -40,6 +40,22 @@ function App() {
       const { value } = e.target;
       setNewStaff({ ...newStaff, assignment: value });
     },
+    handleDutiesChange: (e) => {
+      const { value } = e.target;
+      setNewStaff({ ...newStaff, duties: value });
+    },
+    handleShiftStartChange: (e) => {
+      const { value } = e.target;
+      setNewStaff({ ...newStaff, shiftStart: value });
+    },
+    handleShiftEndChange: (e) => {
+      const { value } = e.target;
+      setNewStaff({ ...newStaff, shiftEnd: value });
+    },
+    handleSeniorityDateChange: (e) => {
+      const { value } = e.target;
+      setNewStaff({ ...newStaff, seniorityDate: value });
+    },
     updateStaff: (id) => {
       API.updateStaff(id, newStaff).then(res => {
         setRefresh({ ...refresh, count: refresh.count + 1 });
